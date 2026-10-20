@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0d0b10">
+  <title>Channel Name TBD</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="page-watch" data-phase="loading">
+  <header class="site-header">
+    <a class="brand" href="./" data-nav>
+      <img class="brand-logo" src="assets/logo.svg" alt="" width="44" height="44">
+      <span class="brand-name" data-channel>Channel Name TBD</span>
+    </a>
+    <div class="on-air-group">
+      <span class="on-air" id="on-air" role="status" aria-label="Off air">On Air</span>
+      <span class="viewers" id="viewers" hidden></span>
+    </div>
+    <nav class="site-nav" aria-label="Pages">
+      <a href="./" data-nav aria-current="page">Watch</a>
+      <a href="guide.html" data-nav>TV Guide</a>
+      <a href="tv.html" data-nav>Watch on TV</a>
+    </nav>
+  </header>
+
+  <main class="watch">
+    <section class="stage" aria-label="Broadcast">
+      <div class="screen">
+        <div class="player" id="player-wrap" hidden>
+          <iframe id="player" title="Live broadcast"
+                  allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+                  allowfullscreen referrerpolicy="no-referrer"></iframe>
+        </div>
+
+        <div class="card card-loading fx-scan" id="card-loading">
+          <p class="card-kicker" id="loading-text">Tuning in…</p>
+        </div>
+
+        <div class="card card-preshow fx-scan" id="card-preshow" hidden>
+          <p class="card-kicker">Sign-on in</p>
+          <p class="countdown" id="countdown" aria-live="off">--:--:--</p>
+          <p class="card-sub">Broadcast begins <strong id="preshow-start"></strong></p>
+          <a class="button" href="tv.html" data-nav>Set up your TV now</a>
+        </div>
+
+        <div class="card card-standby fx-static" id="card-standby" hidden>
+          <div class="bars" aria-hidden="true"></div>
+          <div class="plate">
+            <p class="plate-title">Please stand by</p>
+            <p class="plate-sub">We're having technical difficulties. The picture comes back on its own &mdash; no need to refresh.</p>
+            <p class="plate-sub" id="standby-scheduled"></p>
+          </div>
+        </div>
+
+        <div class="card card-offair fx-scan" id="card-offair" hidden>
+          <p class="card-kicker">That's all, folks</p>
+          <p class="card-title">Thanks for watching</p>
+          <p class="card-sub">This station has signed off. Sweet dreams.</p>
+        </div>
+      </div>
+
+      <div class="now-bar" id="now-bar" hidden>
+        <div class="now-row">
+          <span class="now-label" id="now-label">Now playing</span>
+          <span class="now-slot" id="now-slot"></span>
+        </div>
+        <p class="now-title" id="now-title"></p>
+        <div class="progress" aria-hidden="true"><div class="progress-fill" id="now-progress"></div></div>
+        <div class="now-row">
+          <span class="now-next" id="now-next"></span>
+          <span class="now-left" id="now-left"></span>
+        </div>
+      </div>
+
+      <section class="lineup-panel" id="lineup-panel" hidden>
+        <h2 class="panel-title" id="lineup-title">Tonight's lineup</h2>
+        <ol class="lineup" id="lineup"></ol>
+        <p class="panel-foot"><a href="guide.html" data-nav>Full TV guide &rarr;</a></p>
+      </section>
+
+      <p class="stage-links">
+        <a href="tv.html" data-nav>Watch on your TV</a>
+        <span aria-hidden="true">·</span>
+        <a href="guide.html" data-nav>TV Guide</a>
+      </p>
+    </section>
+
+    <aside class="chat" aria-label="Chat">
+      <iframe id="chat" title="Live chat" referrerpolicy="no-referrer"></iframe>
+    </aside>
+  </main>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/broadcast.js"></script>
+  <script src="assets/watch.js"></script>
+</body>
+</html>

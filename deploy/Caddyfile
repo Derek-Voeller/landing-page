@@ -1,0 +1,43 @@
+# Caddy config for the broadcast server.
+# Replace yourdomain.com with the real domain and check Owncast's port (default 8080).
+# Caddy gets HTTPS certificates for both names automatically once DNS points here.
+
+# ---- The website --------------------------------------------------------------
+tv.yourdomain.com {
+	root * /srv/tv-site
+	encode zstd gzip
+
+	header {
+		X-Robots-Tag "noindex, nofollow"
+		Referrer-Policy "no-referrer"
+		X-Content-Type-Options "nosniff"
+		-Server
+	}
+
+	# Optional password, for the site pages only. Never put one on live.yourdomain.com:
+	# AirPlay and Chromecast fetch the video directly and fail on a password.
+	# Generate a hash with: caddy hash-password
+	# basic_auth {
+	# 	friends <hashed-password>
+	# }
+
+	# Owncast's status, passed through on this domain so the browser can read it.
+	handle /status {
+		rewrite * /api/status
+		reverse_proxy 127.0.0.1:8080
+	}
+
+	# The owner may edit these during the night; never let browsers cache them.
+	@fresh path /schedule.json / /index.html /guide.html /tv.html
+	header @fresh Cache-Control "no-cache"
+
+	handle {
+		file_server
+	}
+}
+
+# ---- Owncast (player, chat, HLS stream) --------------------------------------
+live.yourdomain.com {
+	header X-Robots-Tag "noindex, nofollow"
+	reverse_proxy 127.0.0.1:8080
+}

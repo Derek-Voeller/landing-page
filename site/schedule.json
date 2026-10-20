@@ -1,0 +1,27 @@
+{
+  "channel": "Channel Name TBD",
+  "timezone": "America/Denver",
+  "plannedSignOn": "2026-10-31T11:45:00-06:00",
+  "actualSignOn": null,
+  "delaySeconds": 20,
+  "programs": [
+    { "id": "signon", "type": "signon", "title": "Sign-on", "start": 0, "length": 900,
+      "blurb": "Station identification, tonight's lineup and a word from our sponsors." },
+    { "id": "blob", "type": "movie", "title": "The Blob", "year": 1988, "start": 900, "length": 5701,
+      "blurb": "A hungry, corrosive ooze from a fallen satellite creeps through a small California ski town, dissolving everyone in its path." },
+    { "id": "grabbers", "type": "movie", "title": "Grabbers", "year": 2012, "start": 8100, "length": 5630,
+      "blurb": "Blood-sucking tentacled monsters invade a remote Irish island, and the only defense is to get very, very drunk." },
+    { "id": "arachnophobia", "type": "movie", "title": "Arachnophobia", "year": 1990, "start": 14700, "length": 6571,
+      "blurb": "A deadly Venezuelan spider stows away to a sleepy California town and starts a family. A spider-phobic doctor has to deal with it." },
+    { "id": "jaws", "type": "movie", "title": "Jaws", "year": 1975, "start": 22500, "length": 7436,
+      "blurb": "A great white shark stalks the beaches of Amity Island, and a police chief who hates the water has to go out on it." },
+    { "id": "cloverfield", "type": "movie", "title": "Cloverfield", "year": 2008, "start": 30900, "length": 5080,
+      "blurb": "A Manhattan going-away party is interrupted by something enormous, all of it caught on one friend's handheld camcorder." },
+    { "id": "thething", "type": "movie", "title": "The Thing", "year": 1982, "start": 36900, "length": 6514,
+      "blurb": "At a remote Antarctic research station, a shape-shifting organism could be hiding inside any one of the crew." },
+    { "id": "descent", "type": "movie", "title": "The Descent", "year": 2005, "start": 44100, "length": 5963,
+      "blurb": "Six friends on a caving trip get trapped deep underground and discover they are not alone in the dark." },
+    { "id": "signoff", "type": "signoff", "title": "Sign-off", "start": 50063, "length": 300,
+      "blurb": "Closing announcements, the test pattern, and lights out. Thanks for watching." }
+  ]
+}

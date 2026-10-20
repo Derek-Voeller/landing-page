@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0d0b10">
+  <title>Watch on TV</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="page-tv" data-page-title="Watch on TV">
+  <header class="site-header">
+    <a class="brand" href="./" data-nav>
+      <img class="brand-logo" src="assets/logo.svg" alt="" width="44" height="44">
+      <span class="brand-name" data-channel>Channel Name TBD</span>
+    </a>
+    <div class="on-air-group">
+      <span class="on-air" id="on-air" role="status" aria-label="Off air">On Air</span>
+      <span class="viewers" id="viewers" hidden></span>
+    </div>
+    <nav class="site-nav" aria-label="Pages">
+      <a href="./" data-nav>Watch</a>
+      <a href="guide.html" data-nav>TV Guide</a>
+      <a href="tv.html" data-nav aria-current="page">Watch on TV</a>
+    </nav>
+  </header>
+
+  <main class="tv-wrap">
+    <header class="tv-intro">
+      <h1 class="page-title">Watch on your TV</h1>
+      <p class="lede">Put the movies on the big screen and keep chat on your phone. Set this up before sign-on if you can; it takes a minute.</p>
+    </header>
+
+    <section class="link-card fx-scan" aria-labelledby="direct-title">
+      <h2 class="section-title" id="direct-title">Direct stream link</h2>
+      <p>The raw stream, for VLC, a TV browser, or anything that plays video links.</p>
+      <div class="copy-row">
+        <input class="copy-input" id="direct-link" type="text" readonly aria-label="Direct stream link" value="">
+        <button type="button" class="button" id="copy-link">Copy</button>
+      </div>
+      <p class="copy-status" id="copy-status" role="status"></p>
+    </section>
+
+    <div class="howto-grid">
+      <section class="howto" aria-labelledby="ios-title">
+        <h2 class="section-title" id="ios-title"><span class="step-tag">A</span> iPhone or iPad &rarr; AirPlay</h2>
+        <p class="howto-for">For an Apple TV or a TV with AirPlay built in.</p>
+        <ol>
+          <li>Make sure your phone and TV are on the same Wi-Fi.</li>
+          <li>Open the <a href="./" data-nav>Watch page</a> in Safari and start the player.</li>
+          <li>Tap the AirPlay icon in the player (a screen with a triangle) and pick your TV. Or open Control Center, tap <strong>Screen Mirroring</strong>, and pick your TV.</li>
+          <li>Once the picture is on the TV, you can scroll down to chat on your phone.</li>
+        </ol>
+        <p class="tip"><strong>No AirPlay icon?</strong> Open the <a class="direct-link-a" href="#">direct stream link</a> in Safari. It plays full screen with the AirPlay button in the controls. Go back to the Watch page tab to chat; the TV keeps playing.</p>
+      </section>
+
+      <section class="howto" aria-labelledby="android-title">
+        <h2 class="section-title" id="android-title"><span class="step-tag">B</span> Android &rarr; Chromecast</h2>
+        <p class="howto-for">For a Chromecast, Google TV, or a TV with Chromecast built in.</p>
+        <ol>
+          <li>Make sure your phone and TV are on the same Wi-Fi.</li>
+          <li>Open the <a href="./" data-nav>Watch page</a> in Chrome and start the player.</li>
+          <li>If the player shows a cast icon, tap it and pick your TV.</li>
+          <li>No cast icon? Open the <strong>Google Home</strong> app, pick your TV, tap <strong>Cast my screen</strong>, then go back to Chrome and make the player full screen.</li>
+        </ol>
+        <p class="tip"><strong>If that's choppy or won't connect:</strong> install the free <strong>VLC</strong> app, copy the direct stream link above, then in VLC choose <strong>More &rarr; New stream</strong>, paste it, and tap the cast icon to send it to your TV. Chat stays on the Watch page in Chrome.</p>
+      </section>
+
+      <section class="howto" aria-labelledby="tv-title">
+        <h2 class="section-title" id="tv-title"><span class="step-tag">C</span> Smart TV or computer</h2>
+        <p class="howto-for">For a TV with a web browser, or a laptop plugged into the TV.</p>
+        <ol>
+          <li>Open the TV's or computer's web browser and go to <strong class="site-address"></strong>.</li>
+          <li>Press play, then use the full-screen button.</li>
+        </ol>
+        <p class="tip"><strong>Or use VLC</strong> on a computer: <strong>Media &rarr; Open Network Stream</strong> (Windows) or <strong>File &rarr; Open Network</strong> (Mac), and paste the direct stream link.</p>
+      </section>
+    </div>
+
+    <section class="howto howto-wide" aria-labelledby="trouble-title">
+      <h2 class="section-title" id="trouble-title">If something's off</h2>
+      <ul>
+        <li><strong>A few seconds behind chat?</strong> Normal. Everyone sees the stream 10&ndash;30 seconds behind real time.</li>
+        <li><strong>"Please stand by" on screen?</strong> We're fixing it. The Watch page brings the picture back by itself.</li>
+        <li><strong>TV stopped after a stand-by?</strong> Cast or AirPlay again; the TV doesn't always reconnect on its own.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/broadcast.js"></script>
+  <script src="assets/tv.js"></script>
+</body>
+</html>
